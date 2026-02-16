@@ -140,17 +140,3 @@ app.use('/api', mockRoutes);
 app.listen(3000);
 ```
 
-## Documentation
-
-- **Données** : Voir [data/README.md](data/README.md)
-- **Routes** : Voir [routes/TEMPLATE.md](routes/TEMPLATE.md)
-
-## Notes
-
-- Données en mémoire (non persistantes)
-- Pour dev/test uniquement
-- `.gitignore` exclut les fichiers BPM spécifiques
-
----
-
-**Version :** 2.0 - Auto-chargement Routes & Données
