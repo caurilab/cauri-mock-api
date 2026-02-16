@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+data/*.js
+!data/index.js
+!data/example.data.js
+
+routes/*.js
+!routes/index.js
+!routes/example.routes.js
+!routes/health.routes.js
+
+test-*.js
+*.tmp
