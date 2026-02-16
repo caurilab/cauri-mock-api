@@ -1,6 +1,4 @@
-# Mock API Server - Modulaire et Réutilisable
-
-Serveur API mock avec **auto-chargement** des routes et données. Ajoutez un fichier, il est automatiquement disponible.
+# Mock API Server - Modulaire
 
 ## Installation
 
@@ -16,16 +14,8 @@ node server.js
 
 Le serveur démarre sur `http://localhost:8080` (ou le port défini dans `.env`)
 
-## Démarrage Rapide
 
-### 1. Copier les templates
-
-```bash
-cp data/example.data.js data/users.data.js
-cp routes/example.routes.js routes/users.routes.js
-```
-
-### 2. Personnaliser les données
+### 1. les data
 
 ```javascript
 // data/users.data.js
@@ -37,7 +27,7 @@ const users = [
 module.exports = { users };
 ```
 
-### 3. Personnaliser les routes
+### 2. les routes
 
 ```javascript
 // routes/users.routes.js
@@ -61,10 +51,10 @@ router.get('/users/:id', (req, res) => {
 module.exports = router;
 ```
 
-### 4. C'est tout !
+### 3. C'est tout !
 
 ```bash
-node server.js
+pnpm start
 
 # Output:
 ✓ Data loaded: example.data.js
@@ -72,18 +62,13 @@ node server.js
 ✓ Route loaded: example.routes.js
 ✓ Route loaded: users.routes.js   ← Auto-chargé !
 
-# Tester
-curl http://localhost:8080/api/users
-curl http://localhost:8080/api/users/1
 ```
 
 ## Auto-chargement
 
 **Routes** - Tous les `*.routes.js` dans `routes/` sont automatiquement chargés
 
-**Données** - Tous les `.js` dans `data/` sont automatiquement chargés
-
-**Import simplifié** - Un seul require pour tout :
+**Data** - Tous les `.js` dans `data/` sont automatiquement chargés
 
 ```javascript
 const { users, products, orders } = require('../data');
@@ -112,7 +97,7 @@ const { users, products, orders } = require('../data');
 - `PATCH /examples/:id` - Modifier
 - `DELETE /examples/:id` - Supprimer
 
-### Données ([example.data.js](data/example.data.js))
+### Data ([example.data.js](data/example.data.js))
 
 - `simpleData` - Structure basique
 - `users` - Utilisateurs
